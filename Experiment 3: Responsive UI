@@ -1,0 +1,27 @@
+a) Using MediaQuery
+This program changes text based on screen width using MediaQuery.
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MaterialApp(home: ResponsiveApp()));
+
+class ResponsiveApp extends StatelessWidget {
+  const ResponsiveApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    return Scaffold(body: Center(
+      child: Text(w < 600 ? "Mobile" : w < 1200 ? "Tablet" : "Desktop"),
+    ));
+  }
+}
+b) Using LayoutBuilder
+This uses LayoutBuilder to adapt layout based on parent constraints.
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: Scaffold(
+  body: LayoutBuilder(builder: (ctx, c) {
+    if (c.maxWidth < 600) return const Text("Mobile View");
+    if (c.maxWidth < 1200) return const Text("Tablet View");
+    return const Text("Desktop View");
+  }),
+)));
