@@ -1,0 +1,11 @@
+a) Simple Dart Program
+This simple Dart program prints a greeting and calculates the sum of two numbers.
+void main() {
+  print("Hello Flutter!");
+  int x = 5, y = 7;
+  print("Sum = ${x + y}");
+}
+b) Install Flutter/Dart
+Installation step for environment setup, not actual code.
+No code required.
+Follow instructions from https://flutter.dev to install Flutter and Dart.
